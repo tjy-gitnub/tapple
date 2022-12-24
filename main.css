@@ -1,0 +1,63 @@
+@import url('base.css');
+@import url('box.css');
+
+body{
+    scroll-behavior: smooth;
+}
+
+.info{
+    color: #888;
+}
+
+.box.text{
+    font-size: 90px;
+}
+
+.box.text>*{
+    display: inline-block;
+    margin: 0;
+}
+
+.text.center{
+    text-align: center;
+}
+
+.box.card{
+    border-radius: 12px;
+    /* box-shadow: 5px 5px 10px #0000000f; */
+    margin: 8px;
+    background-color: #7f7f7f20;
+    padding: 10px 20px;
+}
+
+.box.card>.tit{
+    font-size: 40px;
+    line-height: 1.1;
+    font-weight: 500;
+    margin: 10px 0;
+    text-align: start;
+}
+
+.box.card>.tit.center{
+    text-align: center;
+}
+
+.grid{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+}
+
+.card-group{
+    display: flex;
+    flex-wrap: wrap;
+    --card-width:300px;
+}
+
+.card-group.center{
+    justify-content: center;
+}
+
+.card-group>.card{
+    width: var(--card-width);
+}

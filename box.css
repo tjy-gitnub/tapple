@@ -1,0 +1,148 @@
+body {
+    padding-top: 150px;
+    overflow-x: hidden;
+}
+
+.box#title {
+    position: fixed;
+    transition: 200ms;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #ffffffb8;
+    backdrop-filter: saturate(180%) blur(15px);
+    height: 50px;
+    overflow: hidden;
+    border-bottom: 1px solid #7f7f7f50;
+    z-index: 99;
+}
+
+.box#title * {
+    transition: 200ms;
+}
+
+.box#title.start {
+    height: 130px;
+    padding: 10ox 50px;
+}
+
+.box#title>h {
+    font-size: 25px;
+    font-weight: 550;
+    line-height: 25px;
+}
+
+.box#title.start>h {
+    font-size: 50px;
+    font-weight: 550;
+    line-height: 55px;
+}
+
+
+.box#title.start>.info {
+    top: 60px;
+    left: 20px;
+}
+
+.box#title>.info {
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: var(--left);
+    line-height: 20px;
+}
+
+
+.jianbian {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(100deg, var(--colorlt), var(--colorrt));
+}
+
+.jianbian.scroll {
+    background-size: 200% 100%;
+    background-position: var(--scroll) 50%;
+}
+
+.jianbian.highlight {
+    background-image: linear-gradient(90deg, var(--colorrt), var(--colorlt) 25%,
+        transparent 50% 50%, var(--colorlt) 50%, var(--colorrt));
+    background-position: 0% 50%;
+    background-size: 200% 100%;
+    transition: 200ms;
+}
+
+.jianbian.highlight.show {
+    background-position: 100% 50%;
+}
+
+.shine {
+    --speed:1;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(110deg, var(--color) 0 40%, var(--colorshine) 50% 50% ,var(--color) 60%);
+    background-size: 200% 100%;
+    background-position: calc(var(--scroll) * var(--speed)) 50%;
+}
+
+.prog{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(90deg, var(--colorlt) 0 50%, var(--colorrt) 50%);
+    background-size: 200% 100%;
+    background-position: calc(100% - var(--scroll)) 50%;
+}
+
+.fx.h{
+    --speed:5;
+    transform: translate(calc((var(--scroll) - 50%) * var(--speed)),var(--translate));
+}
+.stop-center.stop{
+    transform: none !important;
+}
+.lock{
+    opacity: 0;
+}
+.lock.show{
+    opacity: 1;
+    transform: translate(0,var(--translate));
+}
+.trans.b-s{
+    opacity: 0;
+}
+.trans.b-s.show{
+    opacity: 1;
+    transform: translate(0,var(--translate)) scale(calc(200% - var(--scroll)),calc(200% - var(--scroll)));
+}
+.trans.b-s.stop-center{
+    transform: translate(0,var(--translate)) scale(calc(150% - var(--scroll)),calc(150% - var(--scroll)));
+}
+
+.trans.s-b{
+    opacity: 0;
+}
+.trans.s-b.show{
+    opacity: 1;
+    transform: translate(0,var(--translate)) scale(calc(var(--scroll)),calc(var(--scroll)));
+}
+.trans.s-b.stop-center{
+    transform: translate(0,var(--translate)) scale(calc(50% + var(--scroll)),calc(50% + var(--scroll)));
+}
+.trans.float{
+    opacity: 0;
+    transition: transform 400ms ease-in-out,opacity 400ms ease-out;
+}
+.trans.float.up{
+    transform: translate(0,100%);
+}
+.trans.float.rt{
+    transform: translate(-100%,0);
+}
+.trans.float.lt{
+    transform: translate(100%,0);
+}
+.trans.float.show{
+    transform: none;
+    opacity: 1;
+}
