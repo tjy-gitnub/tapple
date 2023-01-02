@@ -7,6 +7,7 @@ let g_center=$('.lock,.fx.h,.trans.s-b,.trans.b-s');
 let g_highlight=$('.highlight');
 let g_show=$('.lock,.trans.s-b,.trans.b-s');
 let g_stopcenter=$('.stop-center');
+let my_scroll=(t)=>{null};
 if($('html').scrollTop()==0){
     $('#title').addClass('start');
 }
@@ -31,7 +32,7 @@ $('body')[0].onscroll=function() {
     }
     for (let i = 0; i < g_highlight.length; i++) {
         const box = g_highlight[i];
-        if(box.offsetTop-t<0.6*ph){
+        if(box.offsetTop-t<0.7*ph){
             $(box).addClass('show');
         }else{
             $(box).removeClass('show');
@@ -53,5 +54,6 @@ $('body')[0].onscroll=function() {
             $(box).removeClass('stop');
         }
     }
+    my_scroll(t);
 }
 $('html')[0].scroll(0,0);
